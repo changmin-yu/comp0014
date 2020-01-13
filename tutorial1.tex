@@ -1,0 +1,85 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{verbatim}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\pagestyle{fancy}
+
+\renewcommand{\headrulewidth}{0pt}
+\title{Comp0014 Tutorial 1}
+\author{Changmin Yu}
+\date{}
+%\lhead{cy302}\chead{}\rhead{Network Biology Assignment 1}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Basic Linear Algebra}
+\subsection*{Vector Space}
+A vector space over a field (e.g., $\mathbb{R}$ or $\mathbb{C}$) is a set $V$ of elements, or 'vectors', together with two binary operators.
+\begin{itemize}
+    \item \textit{vector addition} denoted for $v_{1}, v_{2}, \in V$ by $v_{1} + v_{2}$, where $v_{1}+v_{2}\in V$, i.e., a vector space is closed under addition.
+    \item \textit{scalar multiplication} denoted for $\lambda\in\mathbb{R}$ and $v\in V$ by $\lambda v$, where $\lambda v\in V$, so that the vector space is closed under scalar multiplication.
+\end{itemize}
+Vector spaces satisfies the following 8 rules:
+\begin{itemize}
+    \item Addition is commutative, i.e. for all $v_{1}, v_{2} \in V$
+    \begin{equation}
+        v_{1} + v_{2} = v_{2} + v_{1}
+    \end{equation}
+    \item Addition is associative, i.e. for all $v_{1}, v_{2}, v_{3} \in V$
+    \begin{equation}
+        v_{1} + (v_{2} + v_{3}) = (v_{1} + v_{2}) + v_{3}
+    \end{equation}
+    \item There exists a unique element $0 \in V$, called the null or zero vector, such that for all $v\in V$
+    \begin{equation}
+        v + 0 = v
+    \end{equation}
+    \item For all $v\in V$ there exists an additive negative or inver vector $v'\in V$ such that
+    \begin{equation}
+        v + v' = 0 
+    \end{equation}
+    \item Scalar multiplication is distributive over scalar addition, i.e. for all $\lambda, \mu \in \mathbb{R}$, and $v\in V$
+    \begin{equation}
+        (\lambda + \mu)v = \lambda v + \mu v
+    \end{equation}
+    \item Scalar multiplication is distributive over vector addition, i.e. for all $\lambda\in\mathbb{R}$ and $v_{1}, v_{2}\in V$
+    \begin{equation}
+        \lambda(v_{1}+v_{2}) = \lambda v_{1} + \lambda v_{2}
+    \end{equation}
+    \item Scalar multiplication of vectors is 'associative', i.e. for all $\lambda, \mu \in \mathbb{R}$ and $v\in V$
+    \begin{equation}
+        \lambda(\mu v) = (\lambda\mu)v
+    \end{equation}
+    \item Scalar multiplication has an identity element, i.e. for all $v\in V$
+    \begin{equation}
+        1\cdot a = a
+    \end{equation}
+    where $1$ is the multiplicative identity in $\mathbb{R}$.
+\end{itemize}
+\subsection*{Spanning sets, linear Independence, Bases}
+First consider 2-dimensional space, $\mathbb{R}^2$, an origin $O$, and two non-zero and non-parallel vectors $v_{1}$ and $v_{2}$. Then any vector $v\in\mathbb{R}^2$, we have
+\begin{equation}
+    v = \lambda v_{1} + \mu v_{2}
+\end{equation}
+for scalars $\lambda, \mu\in\mathbb{R}$. We say that the set $\{v_{1}, v_{2}\}$ \textbf{spans} the set of vectors lying in $\mathbb{R}^2$.\\\\
+\textbf{Definition: Spanning set.} We say that $S = \{v_{1}, \dots, v_{n}\}$ spans a vector space $V$ if for all $v\in V$, $v$ can be expressed as a linear combination of the vectors in $S$, i.e. for all $v\in V$
+\begin{equation}
+    v = \sum_{i=1}^{n}\lambda_{i}v_{i}
+\end{equation}
+where $\lambda_{1}, \dots, \lambda_{n}\in\mathbb{R}$. In such cases, we say that $S$ spans $V$.\\\\
+\textbf{Definition: Linear independence} A set of vectors $S = \{v_{1}, \dots, v_{n}\}$ is said to be a linearly independent set if
+\begin{equation}
+    \sum_{i=1}^{n}\lambda_{i}v_{i} = 0 \quad \Rightarrow \quad \lambda_{i} = 0, \quad i = 1, \dots, n
+\end{equation}
+\textbf{Definition: Basis} We say that the set $S = \{v_{1}, \dots, v_{n}\}$ is a \textit{basis} for a vector space if $S$ is a spanning set and $S$ is linearly independent.
+\end{document}
