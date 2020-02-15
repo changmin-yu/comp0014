@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Probability and Statistics II}
+\author{Changmin Yu}
+\date{February 2020}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\begin{document}
+
+\maketitle
+\section{Maximum Likelihood Estimation}
+\begin{itemize}
+    \item Given data $y\in\mathbb{R}^n$ as realisations of a random variable $Y$, specify its density $f(y; \theta)$ up to some unknown vector of parameters $\theta \in \Theta \subset \mathbb{R}^d$, where $\Theta$ is the parameter space.
+    \item Define the \textbf{likelihood function} as a function of the parameters $\theta$:
+    \begin{equation}
+        L(\theta) = L(\theta; y) = c(y)f(y; \theta)
+    \end{equation}
+    where $c(y)$ is some unknown constant for normalisation
+    \item The maximum likelihood estimator (MLE) of $\theta$, $\hat{\theta}$, is the value of parameters such that $\hat{\theta}$ maximises $L(\theta)$.
+    \begin{equation}
+        \hat{\theta} = \argmax_{\theta}L(\theta; y)
+    \end{equation}
+    \item It is often to work with log-likelihood function.
+\end{itemize}
+\section{Maximum A Posteriori Estimation}
+\begin{itemize}
+    \item Bayes' theorem:
+    \begin{equation}
+        f(x|y) = \frac{f(y|x)f(x)}{f(y)} = \frac{f(y|x)f(x)}{\int f(y|x)f(x)dx}
+    \end{equation}
+    \item Given data $y$ and parametric density function $f(y; \theta)$, the maximum a posteriori (MAP) estimator of $\theta$ given its prior belief $g(\theta)$ is
+    \begin{equation}
+        \hat{\theta}_{\text{MAP}} = \argmax_{\theta}\frac{f(y; \theta)g(\theta)}{\int f(y; \theta)g(\theta)d\theta}
+    \end{equation}
+\end{itemize}
+\section{Ordinary Least Squares}
+\begin{itemize}
+    \item $Y = X\beta + \epsilon$
+    \item OLS estimator
+    \begin{equation}
+        \hat{\beta} = \argmin_{\beta\in\mathbb{R}^p}||Y-X\beta||^2  = (X^TX)^{-1}X^TY
+    \end{equation}
+    note that this is also an orthogonal projection onto the column space of $X$.
+\end{itemize}
+
+\end{document}
