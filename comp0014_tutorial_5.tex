@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Probability and Statistics I}
+\author{Changmin Yu}
+\date{February 2020}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\begin{document}
+
+\maketitle
+\section{Definitions}
+\begin{itemize}
+    \item \textbf{Sample space}: the set of all the outcomes of a random experiment, usually
+denoted by $\Omega$.
+    \item $\mathcal{F}$ is the \textbf{$\sigma$-algebra} of $\Omega$, sets of subsets of $\Omega$, sets of events.
+    \item \textbf{Probability measure}: a function $\mathbb{P}\ :\ \mathcal{F} \rightarrow \mathbb{R}$ satisfying:
+    \begin{itemize}
+        \item $\mathbb{P}(A) \geq 0$, for all $A \in \mathcal{F}$
+        \item $\mathbb{P}(\Omega) = 1$
+        \item If $A_1, A_2, ...$ is a countable sequence of disjoint events, then
+        \begin{equation}
+            \mathbb{P}(\cup_i A_i) = \sum_i \mathbb{P}(A_i)
+        \end{equation}
+    \end{itemize}
+    \item Let $B$ be an event with non-zero probability. The \textbf{conditional probability} of any event $A$ given $B$ is defined as
+    \begin{equation}
+        \mathbb{P}(A|B) = \frac{\mathbb{P}(A \cap B)}{\mathbb{P}(B)}
+    \end{equation}
+    \item Two events are called \textbf{independent} if $\mathbb{P}(A \cap B) = \mathbb{P}(A)\mathbb{P}(B)$
+    \item A \textbf{random variable} $X$ is a function $X : \Omega \rightarrow \mathbb{R}$.
+    \item A \textbf{cumulative distribution function (CDF)} is a function $F_X : \mathbb{R} \rightarrow [0, 1]$, which specifies a probability measure as
+    \begin{equation}
+        F_X(x) = \mathbb{P}(X \leq x)
+    \end{equation}
+    A CDF satisfies the following properties:
+    \begin{itemize}
+        \item $0 \leq F_X(x) \leq 1$
+        \item $\lim_{x \rightarrow -\infty} F_X(x) = 0$
+        \item $\lim_{x \rightarrow \infty} F_X(x) = 1$
+        \item $x \leq y \Rightarrow F_X(x) \leq F_X(y)$
+    \end{itemize}
+    \item When a random variable $X$ takes on a finite set of possible values, i.e., $X$ is a discrete random variable, we could directly specify the probability of each value that the random variable can take. A \textbf{probability mass function (PMF)} is a function $p_X : \Omega \rightarrow \mathbb{R}$ such that
+    \begin{equation}
+        p_X(x) = \mathbb{P}(X = x)
+    \end{equation}
+    A PMF satisfies the following properties:
+    \begin{itemize}
+        \item $0 \leq p_X(x) \leq 1$
+        \item $\sum_{x \in \mathcal{X}} p_X(x) = 1$
+        \item $\sum_{x \in A} p_X(x) = \mathbb{P}(X \in A)$
+    \end{itemize}
+    \item For continuous random variables, we could define the \textbf{probability density function (PDF)} as the derivative of the CDF, i.e.
+    \begin{equation}
+        f_X(x) = \frac{dF_X(x)}{dx}
+    \end{equation}
+    A PDF satisfies the following properties:
+    \begin{itemize}
+        \item $f_X(x) \geq 0$
+        \item $\int_{-\infty}^{\infty} f_X(x)\,dx = 1$
+        \item $\int_{x \in A} f_X(x)\,dx = \mathbb{P}(X \in A)$
+    \end{itemize}
+    \item Let $X$ be a discrete random variable with PMF $p_X(x)$, and $g : \mathbb{R} \rightarrow \mathbb{R}$ is an arbitrary function. Then $g(X)$ becomes a random variable, and we could define the \textbf{expectation} of $g(X)$ as
+    \begin{equation}
+        \mathbb{E}[g(X)] = \sum_{x \in X} g(x) p_X(x)
+    \end{equation}
+    Similarly, if $X$ is a continuous random variable with PDF $f_X(x)$, then the expected value of $g(X)$ is
+    \begin{equation}
+        \mathbb{E}[g(X)] = \int_{-\infty}^{\infty} g(x) f_X(x)\,dx
+    \end{equation}
+    \item The \textbf{variance} of a random variable $X$ is defined as
+    \begin{equation}
+        \text{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2]
+    \end{equation}
+    We then immediately have
+    \begin{equation}
+        \text{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+    \end{equation}
+\end{itemize}
+
+
+\end{document}
