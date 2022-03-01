@@ -54,6 +54,7 @@ denoted by $\Omega$.
         \item $\sum_{x \in \mathcal{X}} p_X(x) = 1$
         \item $\sum_{x \in A} p_X(x) = \mathbb{P}(X \in A)$
     \end{itemize}
+    
     \item For continuous random variables, we could define the \textbf{probability density function (PDF)} as the derivative of the CDF, i.e.
     \begin{equation}
         f_X(x) = \frac{dF_X(x)}{dx}
@@ -64,6 +65,7 @@ denoted by $\Omega$.
         \item $\int_{-\infty}^{\infty} f_X(x)\,dx = 1$
         \item $\int_{x \in A} f_X(x)\,dx = \mathbb{P}(X \in A)$
     \end{itemize}
+    
     \item Let $X$ be a discrete random variable with PMF $p_X(x)$, and $g : \mathbb{R} \rightarrow \mathbb{R}$ is an arbitrary function. Then $g(X)$ becomes a random variable, and we could define the \textbf{expectation} of $g(X)$ as
     \begin{equation}
         \mathbb{E}[g(X)] = \sum_{x \in X} g(x) p_X(x)
@@ -72,14 +74,29 @@ denoted by $\Omega$.
     \begin{equation}
         \mathbb{E}[g(X)] = \int_{-\infty}^{\infty} g(x) f_X(x)\,dx
     \end{equation}
+    
     \item The \textbf{variance} of a random variable $X$ is defined as
     \begin{equation}
         \text{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2]
     \end{equation}
-    We then immediately have
-    \begin{equation}
-        \text{Var}(X) = \mathbb{E}[(X - \mathbb{E}[X])^2] = \mathbb{E}[X^2] - \mathbb{E}[X]^2
+   In other words, the variance is a measure of how much a random variable deviates from its expected value (its mean). In this case, the measure is the squared deviation. Massaging this, we get:
+   \begin{equation}
+    \begin{split}
+        \text{Var}(X) &= \mathbb{E}[(X - \mathbb{E}[X])^2] \\ &= \mathbb{E}[(X^2 - 2X\mathbb{E}[X] + \mathbb{E}[X]^2)] \\ &= \mathbb{E}[X^2] - \mathbb{E}[X]^2
+    \end{split}
     \end{equation}
+    
+    \item The \textbf{covariance} of two random variables $X$ and $Y$ is defined as
+    \begin{equation}
+        \text{Cov}(X, Y) = \sigma_{X,Y} = \mathbb{E}[(X - \mathbb{E}[X])(Y - \mathbb{E}[Y])]
+    \end{equation}
+    The covariance of two variables is the product of how much each random variable deviates from its expected value, where the deviation is the difference, not the squared difference. It is positive when the two random variables tend to behave similarly (get larger/smaller together), negative when they vary inversely with respect to each other, and zero when there is no connection. The equation can also be massaged:
+    \begin{equation}
+    \begin{split}
+        \text{Cov}(X, Y) &= \mathbb{E}[XY - \mathbb{E}[X]Y - X\mathbb{E}[Y] + \mathbb{E}[X]\mathbb{E}[Y]] \\ &=  \mathbb{E}[XY] - \mathbb{E}[X]\mathbb{E}[Y]
+    \end{split}
+    \end{equation}
+    Like above, the last three terms in the expansion simplify to the same quantity and partially cancel out.
 \end{itemize}
 
 
