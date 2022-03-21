@@ -13,7 +13,7 @@
 \pagestyle{fancy}
 
 \renewcommand{\headrulewidth}{0pt}
-\title{Comp0014 Tutorial 1}
+\title{COMP0014 Tutorial 1}
 \author{Changmin Yu}
 \date{}
 %\lhead{cy302}\chead{}\rhead{Network Biology Assignment 1}
@@ -25,12 +25,12 @@
 
 \section*{Basic Linear Algebra}
 \subsection*{Vector Space}
-A vector space over a field (e.g., $\mathbb{R}$ or $\mathbb{C}$) is a set $V$ of elements, or 'vectors', together with two binary operators.
+A vector space over a field (e.g., $\mathbb{R}$ or $\mathbb{C}$) is a set $V$ of elements, or `vectors', together with two binary operators.
 \begin{itemize}
     \item \textit{vector addition} denoted for $v_{1}, v_{2}, \in V$ by $v_{1} + v_{2}$, where $v_{1}+v_{2}\in V$, i.e., a vector space is closed under addition.
     \item \textit{scalar multiplication} denoted for $\lambda\in\mathbb{R}$ and $v\in V$ by $\lambda v$, where $\lambda v\in V$, so that the vector space is closed under scalar multiplication.
 \end{itemize}
-Vector spaces satisfies the following 8 rules:
+Vector spaces satisfy the following 8 rules:
 \begin{itemize}
     \item Addition is commutative, i.e. for all $v_{1}, v_{2} \in V$
     \begin{equation}
@@ -44,7 +44,7 @@ Vector spaces satisfies the following 8 rules:
     \begin{equation}
         v + 0 = v
     \end{equation}
-    \item For all $v\in V$ there exists an additive negative or inver vector $v'\in V$ such that
+    \item For all $v\in V$ there exists an additive negative or inverse vector $v'\in V$ such that
     \begin{equation}
         v + v' = 0 
     \end{equation}
@@ -56,17 +56,17 @@ Vector spaces satisfies the following 8 rules:
     \begin{equation}
         \lambda(v_{1}+v_{2}) = \lambda v_{1} + \lambda v_{2}
     \end{equation}
-    \item Scalar multiplication of vectors is 'associative', i.e. for all $\lambda, \mu \in \mathbb{R}$ and $v\in V$
+    \item Scalar multiplication of vectors is `associative', i.e. for all $\lambda, \mu \in \mathbb{R}$ and $v\in V$
     \begin{equation}
         \lambda(\mu v) = (\lambda\mu)v
     \end{equation}
     \item Scalar multiplication has an identity element, i.e. for all $v\in V$
     \begin{equation}
-        1\cdot a = a
+        1\cdot v = v
     \end{equation}
     where $1$ is the multiplicative identity in $\mathbb{R}$.
 \end{itemize}
-\subsection*{Spanning sets, linear Independence, Bases}
+\subsection*{Spanning Sets, Linear Independence, Bases}
 First consider 2-dimensional space, $\mathbb{R}^2$, an origin $O$, and two non-zero and non-parallel vectors $v_{1}$ and $v_{2}$. Then any vector $v\in\mathbb{R}^2$, we have
 \begin{equation}
     v = \lambda v_{1} + \mu v_{2}

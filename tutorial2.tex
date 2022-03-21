@@ -71,5 +71,12 @@ In other words, if multiplying a matrix by $A$ is seen as applying a linear tran
 
 Inverse matrices only exist for square matrices that are full rank.  \textbf{Rank} refers to the maximal number of linearly independent column vectors in a matrix. If all the column vectors of $n \times n$ matrix $A$ are linearly independent, the rank of the matrix is $n$ and the matrix has full rank and is invertible. If the rank is less than $n$ (i.e. at least one vector can be written as a linear combination of the others i.e. at least one of the vectors is ``redundant" and could be removed without changing the spanning set of the column vectors of $A$), the matrix is said to be \textbf{rank deficient}.
 
+\subsection*{Column and row spaces}
+
+In a matrix, the columns (or rows) can be thought of as a set of vectors. The spanning set (recall from last week) of the set of column or row vectors is called the \textbf{column space} and \textbf{row space} respectively. (Note: The column space of matrix $A$ is the row space of matrix $A^T$ and vice versa.)
+
+If you have a matrix with $m$ rows (so each column vector $\in \mathbb{F}^m$ for some field $\mathbb{F}$), then the column space will be a \textbf{subspace} of $\mathbb{F}^m$. A (linear) subspace is a portion/subset of another vector space, which is itself a vector space. It is the portion of $\mathbb{F}^m$ reachable through linear combinations of the column vectors, and obeys the addition and scalar multiplication closure properties of vector spaces.
+
+For a full rank matrix, the column space is just $\mathbb{F}^m$. However, the column space of a deficient rank matrix will span only a particular portion of $\mathbb{F}^m$ (which depends on the particular column vector(s) involved).
 
 \end{document}
